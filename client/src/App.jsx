@@ -6,7 +6,9 @@ import Service from "./pages/Service";
 import Register from "./pages/Register";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
+
 import Footer from "./components/Footer";
+import Error from "./pages/Error";
 const App=()=>
 {
   return(
@@ -21,6 +23,7 @@ const App=()=>
       <Route path="/service" element={<Service />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
+      <Route path="*" element={<Error />} />
 
 
     </Routes>
