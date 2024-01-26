@@ -1,13 +1,15 @@
 import { useState } from "react";
-
+import {useNavigate} from "react-router-dom";
 const Register=()=>
 {
+    
     const [user,setUser]=useState({
         username:"",
         email:"",
         phone:"",
         password:"",
     });
+    const navigate=useNavigate();
     const handleInput=(e)=>
     {
         let name=e.target.name;
@@ -18,9 +20,39 @@ const Register=()=>
         })
 
     }
-    const handleSubmit=(e)=>
+    const handleSubmit= async(e)=>
     {
         e.preventDefault();
+        try {
+            const response=await fetch(`http://localhost:3000/api/auth/register`,{
+                method:'POST',
+                headers:{
+                    "Content-Type":"application/json",
+                },
+                body: JSON.stringify(user),
+                
+
+            });
+
+            //clearing data from console
+            if(response.ok)
+            {
+                setUser({
+                    username:"",
+        email:"",
+        phone:"",
+        password:"",
+                });
+                navigate("/login");
+
+            }
+            // console.log(response);
+            const res_data = await response.json();
+            console.log(res_data);
+            
+        } catch (error) {
+            console.log(error);
+        }
         
 
 
