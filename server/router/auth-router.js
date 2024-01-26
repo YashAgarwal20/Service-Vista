@@ -6,6 +6,6 @@ const signupSchema=require("../validators/auth-validator.js");
 
 router.route("/").get(authcontroller.home);
 router.route("/register").post(validate(signupSchema),authcontroller.register);
-router.route("/login").post(validate(signupSchema),authcontroller.login);
+router.route("/login").post(authcontroller.login);
 
 module.exports=router;

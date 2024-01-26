@@ -37,6 +37,8 @@ const Register=()=>
             //clearing data from console
             if(response.ok)
             {
+                const res_data = await response.json();
+            console.log(res_data);
                 setUser({
                     username:"",
         email:"",
@@ -47,8 +49,7 @@ const Register=()=>
 
             }
             // console.log(response);
-            const res_data = await response.json();
-            console.log(res_data);
+            
             
         } catch (error) {
             console.log(error);

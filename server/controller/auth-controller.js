@@ -1,6 +1,7 @@
 const express=require("express");
 const User=require("../models/user-model");
 const bcrypt=require("bcryptjs");
+
 const home=async (req,res)=>
 {
     try {
@@ -55,7 +56,7 @@ const login=async(req,res)=>
     // const user=await bcrypt.compare(password,userExist.password);
     const user=await userExist.comparepassword(password);
     
-    if(!user)
+    if(user)
     {
         res
         .status(200)
