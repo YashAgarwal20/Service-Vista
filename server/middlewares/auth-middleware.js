@@ -20,6 +20,7 @@ const authMiddleware=async(req,res,next)=>
       password:0,
     });
 
+console.log(userData);
     req.user=userData;
     req.token=token;
     req.userID=userData._id;

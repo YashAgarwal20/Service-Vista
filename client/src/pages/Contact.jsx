@@ -1,13 +1,30 @@
 import { useState } from "react";
-
+import { useAuth } from "../store/Auth";
 const Contact=()=>
 {
-
+ 
     const [contact ,setContact]=useState({
         username:"",
         email:"",
         message:"",
-    })
+    });
+    const [userData,setUserData]=useState(true);
+
+    const {user,isLoggedIn}=useAuth();
+    if(userData&&user)
+    {
+        setContact({
+            username:user.username,
+            email:user.email,
+            message:"",
+        });
+
+        setUserData(false);
+    }
+
+    
+   
+    
     const handleInput=(e)=>
     {
         let name=e.target.name;
@@ -18,10 +35,36 @@ const Contact=()=>
         })
     } 
     
-    const handleSubmit=(e)=>
+    const handleSubmit=async(e)=>
     {
         e.preventDefault();
-        alert("contact form submitted");
+        
+        try {
+            const response=await fetch(`http://localhost:3000/api/form/contact`,{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json",
+            },
+            body:JSON.stringify(contact),
+        });
+
+        if(response.ok)
+        {
+            setContact({
+                username:contact.username,
+                email:contact.email,
+                message:"",
+            })
+            alert("message sent successfully");
+        }
+
+
+        } catch (error) {
+            console.log(error);
+        }
+        
+
+
     }
     
     return(

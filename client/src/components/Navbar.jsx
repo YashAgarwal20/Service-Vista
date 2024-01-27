@@ -4,7 +4,7 @@ import { useAuth } from "../store/Auth";
 
 const Navbar=()=>
 {
-    const {isLoggedIn}=useAuth;
+    const {isLoggedIn}=useAuth();
     return(
         <>
         <header>

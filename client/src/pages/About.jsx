@@ -1,9 +1,9 @@
 import React from "react";
-
+import { useAuth } from "../store/Auth";
 // import Typewriter from 'typewriter-effect';
 
 const About = () => {
-    
+    const {user}=useAuth();
     return (
         <>
         
@@ -21,7 +21,7 @@ const About = () => {
                 <section className="section-hero">
                     <div className="container grid grid-two-cols">
                         <div className="hero-content">
-                            <p>Welcome to our website</p>
+                            <p>Welcome to our website {user.username}</p>
                             <h1>Why Choose Us?</h1>
                             <p>
                                 Every Customer is Special:
