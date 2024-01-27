@@ -19,7 +19,7 @@ const register=async (req,res)=>
         const {username,email,phone,password}=req.body;
         const userExist=await User.findOne({email:email});
         if(userExist){
-            return res.status(400).json({msg:"email already exists"});
+            return res.status(400).json({message:"email already exists"});
 
         }
         else
@@ -27,7 +27,7 @@ const register=async (req,res)=>
             const userCreated=await User.create({username,email,phone,password});
         res
         .status(201)
-         .json({msg:userCreated,
+         .json({message:userCreated,
         token:await userCreated.generateToken(),
         userId:userCreated._id.toString()
     });

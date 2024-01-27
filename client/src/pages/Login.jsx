@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {useNavigate} from "react-router-dom";
-import { useAuth } from "../store/Auth";
+import { useAuth } from "../store/auth";
 
 const Login=()=>
 {
@@ -33,10 +33,11 @@ const Login=()=>
             },
             body: JSON.stringify(user),
         })
+        const res_data=await response.json();
+        console.log(res_data);
         if(response.ok)
         {
-            const res_data=await response.json();
-        console.log(res_data);
+            
         storetokenonLS(res_data.token);
         
             setUser({
@@ -49,6 +50,7 @@ const Login=()=>
         }
         else
         {
+            alert(res_data.extraDetails?res_data.extraDetails:res_data.message);
             setUser({
         
                 email:"",

@@ -34,11 +34,13 @@ const Register=()=>
 
             });
 
+            const res_data = await response.json();
+            console.log(res_data);
+
             //clearing data from console
             if(response.ok)
             {
-                const res_data = await response.json();
-            console.log(res_data);
+                
                 setUser({
                     username:"",
         email:"",
@@ -47,6 +49,9 @@ const Register=()=>
                 });
                 navigate("/login");
 
+            }
+            else{
+                alert(res_data.extraDetails?res_data.extraDetails:res_data.message);
             }
             // console.log(response);
             
