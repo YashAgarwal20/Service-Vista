@@ -9,8 +9,11 @@ import Login from "./pages/Login";
 
 import Footer from "./components/Footer";
 import Error from "./pages/Error";
+import Logout from "./pages/Logout";
+
 const App=()=>
 {
+  
   return(
     <>
     
@@ -23,6 +26,8 @@ const App=()=>
       <Route path="/service" element={<Service />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/logout" element={<Logout />} />
+      
       <Route path="*" element={<Error />} />
 
 
