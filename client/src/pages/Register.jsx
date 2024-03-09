@@ -1,5 +1,8 @@
 import { useState } from "react";
 import {useNavigate} from "react-router-dom";
+import {toast } from 'react-toastify';
+import { useAuth } from "../store/auth";
+
 const Register=()=>
 {
     
@@ -9,6 +12,7 @@ const Register=()=>
         phone:"",
         password:"",
     });
+    const {storetokenonLS} =useAuth();
     const navigate=useNavigate();
     const handleInput=(e)=>
     {
@@ -40,6 +44,7 @@ const Register=()=>
             //clearing data from console
             if(response.ok)
             {
+                storetokenonLS(res_data.token);
                 
                 setUser({
                     username:"",
@@ -47,11 +52,12 @@ const Register=()=>
         phone:"",
         password:"",
                 });
-                navigate("/login");
+                toast.success("Registration Successful");
+                navigate("/");
 
             }
             else{
-                alert(res_data.extraDetails?res_data.extraDetails:res_data.message);
+                toast.error(res_data.extraDetails?res_data.extraDetails:res_data.message);
             }
             // console.log(response);
             

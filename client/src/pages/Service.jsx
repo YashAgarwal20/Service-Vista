@@ -15,11 +15,11 @@ const Service = () => {
                     {
                     services.map((currelement,index)=>
                     {
-                        const {work,pay,address}=currelement;
+                        const {work,pay,address,employee_id}=currelement;
                         return (
                             <div className="card">
                         <div className="card-img">
-                            <img src="/images/service.svg" alt="our services" width="200" />
+                            <img src={`/images/${work}.png`} alt="our services" width="200" />
                         </div>
                         <div className="card-details">
                                 <h2>{work}</h2>
@@ -27,7 +27,7 @@ const Service = () => {
                                 <p>{address}</p>
                                 <p>Experience:- 2+ years</p>
                                 <br/>
-                                <p>Employee ID:-</p>
+                                <p>Employee ID:-{employee_id}</p>
                                 
                             
                         </div>

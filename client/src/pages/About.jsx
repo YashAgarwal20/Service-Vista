@@ -32,16 +32,16 @@ const About = () => {
                                 You can easily register with us online and then filling the requirement form or by visiting our office, whatever is convenient to you and helps you trust us.
                             </p>
                             <p>
-                                Receive the profile of Maid:
-                                Based on the requirement mentioned by you, we will share the profile of maid that fits into your specifications
+                                Receive the profile for any mentioned services:
+                                Based on the requirement mentioned by you, we will share the profile of employee that fits into your specifications
                             </p>
                             <p>
-                                Interview and finalize your Maid:
-                                To make process smooth, we first schedule Audio/Video Call for Interview purpose, so you definitely know the candidate before they arrive at your place. You can clearly have all discussions related to work and salary.
+        
+                                To make process smooth, we first schedule Audio/Video Call for Interview purpose, so you definitely know the candidate before they arrive at your place. You can clearly have all discussions related to work and fees.
                             </p>
                             <p>
                                 Receive Candidate’s verification file:
-                                Once we receive complete commission, a file with Police verification, Id Proofs and Agency Verification will be shred within 24hrs. If you want Criminal records verification of candidate, we can get this also done at additional cost of just Rs. 500/-.
+                                
                             </p>
                             <p>For any query click on Connect now button</p>
                             <div className="btn btn-group">
@@ -52,7 +52,7 @@ const About = () => {
                         </div>
                         <div className="about-img">
                             <img
-                                src="/images/about3.jpg"
+                                src="/images/about4.png"
                                 alt="coding together"
                                 width="500px"
                             />

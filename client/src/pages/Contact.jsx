@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../store/Auth";
+import { toast } from "react-toastify";
 const Contact=()=>
 {
  
@@ -55,7 +56,8 @@ const Contact=()=>
                 email:contact.email,
                 message:"",
             })
-            alert("message sent successfully");
+            toast.success("message sent successfully");
+            
         }
 
 

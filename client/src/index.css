@@ -13,6 +13,7 @@
   --helper-color: #99b9ff;
 }
 
+
 html {
   font-size: 62.5%;
 }
@@ -78,6 +79,12 @@ a {
 
 li {
   list-style: none;
+}
+
+.toastBody{
+  font-family: "Atlas Grotesk Web",Arial, Helvetica, sans-serif;
+  
+  font-size: 1.7rem ;
 }
 
 /*? layout Rule  */

@@ -30,10 +30,10 @@ const Home=()=>
             {/* hero images  */}
             <div className="hero-image">
               <img
-                src="/images/home.jpg"
+                src="/images/home.png"
                 alt="coding together"
-                width="400"
-                height="500"
+                width="900"
+                height="1000"
               />
             </div>
           </div>
@@ -49,7 +49,7 @@ const Home=()=>
           {/* hero images  */}
           <div className="hero-image">
             <img
-              src="/images/home2.jpg"
+              src="/images/about4.png"
               alt="coding together"
               width="400"
               height="500"
