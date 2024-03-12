@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuth } from "../store/Auth";
-// import Typewriter from 'typewriter-effect';
+import Typewriter from 'typewriter-effect';
 
 const About = () => {
     const {user}=useAuth();
@@ -9,14 +9,14 @@ const About = () => {
         
             <main>
             <div className="moving-text">
-            {/* <Typewriter
+            <Typewriter
             options={{
                 autoStart:true,
                 loop:true,
                 delay:50,
                 strings:["For specific requirements fill out the Requirement-Form after logging in and we will get back to you."]
             }}
-            /> */}
+            />
             </div>
                 <section className="section-hero">
                     <div className="container grid grid-two-cols">

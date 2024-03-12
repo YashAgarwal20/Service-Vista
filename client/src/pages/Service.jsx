@@ -27,7 +27,7 @@ const Service = () => {
                                 <p>{address}</p>
                                 <p>Experience:- 2+ years</p>
                                 <br/>
-                                <p>Employee ID:-{employee_id}</p>
+                                <p>Service ID:-{employee_id}</p>
                                 
                             
                         </div>

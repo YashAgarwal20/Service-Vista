@@ -11,7 +11,7 @@ const Home=()=>
               <p>India's most trusted site for daily service's need</p>
               <h1>Welcome To Service Vista</h1>
               <p>
-                We aim to provide you with complete range of house help manpower, which is needed to run your house smoothly. Our men are experienced, verified and trustworthy. We give solutions for all your household needs, whether it is hiring a 24 hours maid service or a house-servant staff, an electrician, plumber or Japa maid services, a cook or chef,a carpenter or a gardener.
+                We aim to provide you with complete range of house help manpower, which is needed to run your house smoothly. Our men are experienced, verified and trustworthy. We give solutions for all your household needs, whether it is hiring a 24 hours maid service or a house-servant staff, an electrician, plumber or  maid services, a cook or chef,a carpenter or a gardener.
                 Be a part of the local services revolution
 
               </p>
@@ -60,10 +60,8 @@ const Home=()=>
             <p>We are here to help you</p>
             <h1>Get Started Today</h1>
             <p>
-              Ready to take the first step towards a more efficient and secure
-              IT infrastructure? Contact us today for a free consultation and
-              let's discuss how Thapa Technical can help your business thrive in
-              the digital age.
+              Ready to take the first step ? Contact us today for a free consultation and
+              let's discuss how we can help your daily service issues.
             </p>
             <div className="btn btn-group">
               <a href="/contact">
