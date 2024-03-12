@@ -1,6 +1,6 @@
 const User=require("../models/user-model");
 const Contact=require("../models/contact-models");
-
+const Service=require("../models/service-models");
 const getAllUsers=async(req,res)=>
 {
     try {
@@ -27,4 +27,17 @@ const getAllContacts=async(req,res)=>
     }
 }
 
-module.exports={getAllUsers,getAllContacts};
+const getAllServices=async(req,res)=>
+{
+    try {
+        const services=await Service.find();
+        if(!services||services.length===0)
+        return res.status(404).json({message:"No Contacts Found"});
+    return res.status(200).json(services);
+
+    } catch (error) {
+        next(error);
+    }
+}
+
+module.exports={getAllUsers,getAllContacts,getAllServices};
