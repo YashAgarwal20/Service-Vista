@@ -427,6 +427,9 @@ a.active{
   }
 }
 
+
+
+
 /** -----------------------
 ** media query section css
 ** -------------------------  */
@@ -570,6 +573,47 @@ a.active{
     }
   }
 }
+
+/* body tr{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(10rem,1fr));
+  align-items:center;
+  box-shadow: 0 0.3rem 0 grey;
+  margin-bottom: 10px;
+  border-bottom: 4px solid transparent;
+  color:var(--bg-color);
+
+  &:last-child{
+    box-shadow: none;
+  }
+}
+
+.updateLink{
+  background:#cff6dd;
+  color:#1fa750;
+  border-radius: 3rem;
+  padding:1rem 4rem;
+  -webkit-border-radius:3rem;
+  -moz-border-radius:3rem;
+  -ms-border-radius:3rem;
+  -o-border-radius:3rem;
+
+}
+&:hover{
+  color:#cff6dd;
+  background:#1fa750;
+  font-weight: bold;
+}
+
+.admin-section-form{
+  background-color: var(--bg-color);
+  max-width: 60rem;
+  padding:0 10rem;
+  color:var(--dark-color);
+  margin: left 10rem;
+
+} */
+
 
 /** -----------------------
 ** media query section css

@@ -36,6 +36,7 @@ export const AuthProvider=({children})=>{
                     Authorization:`Bearer ${token}`,
                 }
             });
+           
             console.log("cheching for contact page" +response);
             if(response.ok)
             {
@@ -86,7 +87,7 @@ export const AuthProvider=({children})=>{
 
 
     return(
-        <AuthContext.Provider value={{isLoggedIn,storetokenonLS,LogoutUser,user,UserActivation,services}}>
+        <AuthContext.Provider value={{isLoggedIn,storetokenonLS,LogoutUser,user,UserActivation,services,token}}>
             {children}
         </AuthContext.Provider>
     )
