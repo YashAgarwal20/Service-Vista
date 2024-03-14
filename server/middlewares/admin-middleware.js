@@ -1,27 +1,20 @@
-const jwt=require("jsonwebtoken");
-const Adminmiddleware=async(req,res,next)=>
+
+const adminMiddleware=async(req,res,next)=>
 {
-    
-   const token=req.header("Authorization");
+    try {
+      const adminRole=req.user.isAdmin;
+      if(!adminRole)
+      {
+        return res.status(403).json({message:"Access denied. User is not an admin."});
 
-   if(!token)
-   {
-    res.status(404).json({message:"Not a admin"});
-   }
-   else{
-    const jwttoken=token.replace("Bearer","").trim();
-    const isverify=await jwt.verify(jwttoken,""+process.env.JWT_SECRET_KEY);
-
-    const isadmin=isverify.isAdmin;
-    if(isadmin===true)
-    {
-        res.json("not a admin");
+      }
+     next();
+      
+    } catch (error) {
+      next(error);
     }
     
-    next();
-
-   }
 
 
 }
-module.exports=Adminmiddleware;
+module.exports=adminMiddleware;

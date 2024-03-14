@@ -26,6 +26,30 @@ const AdminUsers=()=>
         }
     }
 
+    const deleteUser=async(id)=>
+    {
+        
+        try {
+            const response=await fetch(`http://localhost:3000/api/admin/users/delete/${id}`,{
+                method:"DELETE",
+                headers:{
+                    Authorization:`Bearer ${token}`,
+                }
+       
+            });
+            const data=await response.json();
+            if(response.ok)
+            {
+                getAllUsersData();
+            }
+            
+        } catch (error) {
+            console.log("error");
+        }
+        
+        
+    }
+
 
   useEffect(()=>{
     getAllUsersData();
@@ -33,14 +57,19 @@ const AdminUsers=()=>
 
    return(
     <>
-    <table class="table table-dark table-striped">
+    <section className="admin-users-section">
+        <div className="container">
+            <h1>Admin Users Data</h1>
+        </div>
+        <div className="container admin-users">
+        <table>
   <thead>
     <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Update</th>
-	  <th scope="col">Delete</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Update</th>
+	  <th>Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -50,11 +79,14 @@ const AdminUsers=()=>
             <td>{curUser.email}</td>
             <td>{curUser.phone}</td>
             <td>Edit</td>
-            <td>Delete</td>
+            <td><button onClick={()=>deleteUser(curUser._id)}>Delete</button></td>
         </tr>
     })}
   </tbody>
 </table>
+        </div>
+    </section>
+    
     </>
    )
 }
