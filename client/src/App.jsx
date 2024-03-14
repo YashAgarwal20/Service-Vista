@@ -14,6 +14,7 @@ import AdminUsers from "./pages/Admin-Users";
 import AdminServices from "./pages/Admin-Services";
 import AdminContacts from "./pages/Admin-Contacts";
 import AdminLayouts from "./components/layouts/Admin-Layout";
+import AdminUpdate from "./pages/AdminUpdate";
 
 const App=()=>
 {
@@ -35,6 +36,7 @@ const App=()=>
       <Route path="/admin/users" element={<AdminUsers />} />
       <Route path="/admin/contacts" element={<AdminContacts />} />
       <Route path="/admin/services" element={<AdminServices />} />
+      <Route path="/admin/users/:id/edit" element={<AdminUpdate/>} />
       
       <Route path="*" element={<Error />} />
 

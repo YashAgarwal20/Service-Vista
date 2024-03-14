@@ -47,9 +47,10 @@ const getUserById=async(req,res,next)=>
 const updateUserById=async(req,res,next)=>
 {
 try {
+    
     const id=req.params.id;
     const updatedUserData=req.body;
-const updateddata=await User.update({_id:id},{
+const updateddata=await User.updateOne({_id:id},{
     $set:updatedUserData
 });
 return res.status(200).json(updateddata);

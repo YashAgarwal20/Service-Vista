@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import {useAuth} from "../store/Auth";
 import {Link} from "react-router-dom";
+import { toast } from "react-toastify";
 const AdminUsers=()=>
 {
     const [users,setUsers]=useState([]);
@@ -41,7 +42,12 @@ const AdminUsers=()=>
             const data=await response.json();
             if(response.ok)
             {
+                toast.success("Deleted Successfully");
                 getAllUsersData();
+            }
+            else
+            {
+                toast.error("Deletion Filed");
             }
             
         } catch (error) {
@@ -79,7 +85,7 @@ const AdminUsers=()=>
             <td>{curUser.username}</td>
             <td>{curUser.email}</td>
             <td>{curUser.phone}</td>
-            <td><Link to={`/admin/users/${curUser._id}/edit`}>Edit</Link></td>
+            <td><button><Link  to={`/admin/users/${curUser._id}/edit`}>Edit</Link></button></td>
             <td><button onClick={()=>deleteUser(curUser._id)}>Delete</button></td>
         </tr>
     })}
