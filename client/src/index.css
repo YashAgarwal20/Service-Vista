@@ -576,7 +576,8 @@ a.active{
 
 
 
-td{
+/* td{
+  background-color: rgb(127, 215, 184);
   font-size: 1.7rem;
   letter-spacing: 0.1rem;
   padding: 3rem;
@@ -586,6 +587,7 @@ td{
 }
 
 table{
+  table-layout: auto;
   background: #fff;
   box-shadow: rgba(255,255,255,0.2) 0px 7px 29px 0px;
   border-collapse: collapse;
@@ -595,11 +597,11 @@ table{
   -ms-border-radius:3rem;
   -o-border-radius:3rem;
 
-}
+} */
 
 
 
-.admin-contacts-section{
+/* .admin-contacts-section{
   padding:2rem;
 }
 .admin-contacts-section tr{
@@ -614,9 +616,9 @@ table{
   &:last-child{
     box-shadow: none;
   }
-}
+} */
 
-body tr{
+/* body tr{
   display:grid;
   grid-template-columns:repeat(5,minmax(10rem,1fr));
   align-items:center;
@@ -628,6 +630,11 @@ body tr{
   &:last-child{
     box-shadow: none;
   }
+}
+thead th {
+  background-color: #202932;
+  color: #fff;
+  border: 10px solid #202932;
 }
 
 .updateLink{
@@ -675,7 +682,7 @@ body tr{
       }
     }
   }
-} 
+}  */
 
 
 /** -----------------------
