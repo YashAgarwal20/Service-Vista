@@ -1,4 +1,5 @@
 const User=require("../models/user-model");
+
 const Contact=require("../models/contact-models");
 const Service=require("../models/service-models");
 const getAllUsers=async(req,res,next)=>
@@ -29,6 +30,23 @@ const deleteUserById=async(req,res,next)=>
     }
 
 }
+
+const deleteContactById=async(req,res,next)=>
+{
+    try {
+        
+        const id=req.params.id;
+        
+        await Contact.deleteOne({_id:id});
+        return res.status(200).json({message:"Contact Deleted Successfully"});
+
+        
+    } catch (error) {
+        next(error);
+    }
+
+}
+
 
 const getUserById=async(req,res,next)=>
 {
@@ -90,4 +108,4 @@ const getAllServices=async(req,res,next)=>
     }
 }
 
-module.exports={getAllUsers,getAllContacts,getAllServices,deleteUserById,getUserById,updateUserById};
+module.exports={getAllUsers,getAllContacts,getAllServices,deleteUserById,getUserById,updateUserById,deleteContactById};
