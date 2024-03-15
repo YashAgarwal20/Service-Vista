@@ -37,7 +37,7 @@ export const AuthProvider=({children})=>{
                 }
             });
            
-            console.log("cheching for contact page" +response);
+            
             if(response.ok)
             {
                 const data=await response.json();

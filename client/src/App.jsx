@@ -15,9 +15,12 @@ import AdminServices from "./pages/Admin-Services";
 import AdminContacts from "./pages/Admin-Contacts";
 import AdminLayouts from "./components/layouts/Admin-Layout";
 import AdminUpdate from "./pages/AdminUpdate";
+import { useAuth } from "./store/Auth";
 
 const App=()=>
 {
+  const {user}=useAuth();
+  const isAdmin=user.isAdmin;
   
   return(
     <>
