@@ -1,9 +1,11 @@
 import React from "react";
-import { useAuth } from "../store/auth";
+import { useAuth } from "../store/Auth";
+
 
 const Service = () => {
 
     const {services}=useAuth();
+     
 
     return (
         <>
@@ -17,9 +19,9 @@ const Service = () => {
                     {
                         const {work,pay,address,employee_id}=currelement;
                         return (
-                            <div className="card">
+                            <div className="card" >
                         <div className="card-img">
-                            <img src={`/images/${work}.png`} alt="our services" width="200" />
+                            <img src={`/images/${work}.png`} alt="our services" width="200"  />
                         </div>
                         <div className="card-details">
                                 <h2>{work}</h2>

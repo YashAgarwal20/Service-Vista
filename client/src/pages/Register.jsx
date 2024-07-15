@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {useNavigate} from "react-router-dom";
 import {toast } from 'react-toastify';
-import { useAuth } from "../store/auth";
+import { useAuth } from "../store/Auth";
 
 const Register=()=>
 {
@@ -28,7 +28,7 @@ const Register=()=>
     {
         e.preventDefault();
         try {
-            const response=await fetch(`http://localhost:3000/api/auth/register`,{
+            const response=await fetch(`https://service-deploy-2.onrender.com/api/auth/register`,{
                 method:'POST',
                 headers:{
                     "Content-Type":"application/json",

@@ -100,7 +100,7 @@ const getAllServices=async(req,res,next)=>
     try {
         const services=await Service.find();
         if(!services||services.length===0)
-        return res.status(404).json({message:"No Contacts Found"});
+        return res.status(404).json({message:"No services Found"});
     return res.status(200).json(services);
 
     } catch (error) {
@@ -108,4 +108,50 @@ const getAllServices=async(req,res,next)=>
     }
 }
 
-module.exports={getAllUsers,getAllContacts,getAllServices,deleteUserById,getUserById,updateUserById,deleteContactById};
+const updateServiceById=async(req,res,next)=>
+{
+try {
+    
+    const id=req.params.id;
+    const updatedUserData=req.body;
+const updateddata=await Service.updateOne({_id:id},{
+    $set:updatedUserData
+});
+return res.status(200).json(updateddata);
+
+    
+} catch (error) {
+    next(error);
+}
+}
+const deleteServiceById=async(req,res,next)=>
+{
+    try {
+        
+        const id=req.params.id;
+        
+        await Service.deleteOne({_id:id});
+        return res.status(200).json({message:"Service Deleted Successfully"});
+
+        
+    } catch (error) {
+        next(error);
+    }
+
+}
+const getServiceById=async(req,res,next)=>
+{
+    try {
+        const id=req.params.id;
+        const users=await Service.findOne({_id:id});
+        
+    return res.status(200).json(users);
+
+    } catch (error) {
+        next(error);
+    }
+
+}
+
+
+module.exports={getAllUsers,getAllContacts,getAllServices,deleteUserById,getUserById,updateUserById,deleteContactById,getServiceById,updateServiceById,deleteServiceById};

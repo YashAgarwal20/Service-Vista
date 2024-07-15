@@ -12,7 +12,7 @@ const AdminServices=()=>
         try {
             
             
-            const response=await fetch("http://localhost:3000/api/admin/services",{
+            const response=await fetch("https://service-deploy-2.onrender.com/api/admin/services",{
                 method:"GET",
                 headers:{
                     Authorization:`Bearer ${token}`,
@@ -33,7 +33,7 @@ const AdminServices=()=>
     {
         
         try {
-            const response=await fetch(`http://localhost:3000/api/admin/services/delete/${id}`,{
+            const response=await fetch(`https://service-deploy-2.onrender.com/api/admin/services/delete/${id}`,{
                 method:"DELETE",
                 headers:{
                     Authorization:`Bearer ${token}`,
